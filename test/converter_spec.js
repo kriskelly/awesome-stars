@@ -1,5 +1,6 @@
 var expect = require('chai').expect;
 var fs = require('fs');
+process.env['TOKEN'] = 'foobar';
 var converter = require('../lib/converter.js');
 var pretty = require('prettyjson');
 var nock = require('nock');
