@@ -10,10 +10,11 @@ Promise.promisifyAll(fs);
 reader.readMarkdown().then(lists => {
   var htmlMap = _.mapValues(lists, function(markdownStr, listName) {
     var tree = converter.getTree(markdownStr);
-    converter.convertListToTable(tree);
-    return converter.toHTML(tree);
+    return converter.convertListToTable(tree).then(function() {
+      return converter.toHTML(tree);
+    });
   });
-  return writer.writeFilesAsync(htmlMap);
+  return Promise.props(htmlMap).then(writer.writeFilesAsync);
 }).then(() => {
   console.log('success');
 });

@@ -4,6 +4,7 @@
   "description": "Awesome lists, more awesome'd.",
   "main": "index.js",
   "scripts": {
+    "start": "node --harmony --harmony_arrow_functions index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kris Kelly",

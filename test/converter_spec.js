@@ -2,6 +2,7 @@ var expect = require('chai').expect;
 var fs = require('fs');
 var converter = require('../lib/converter.js');
 var pretty = require('prettyjson');
+var nock = require('nock');
 
 describe('converting list to table', function() {
   beforeEach(function() {
@@ -9,10 +10,12 @@ describe('converting list to table', function() {
     this.tableContent = fs.readFileSync('./test/fixtures/table.md').toString();
   });
 
-  it('converts the markdown to a tree', function() {
+  it('converts the markdown to a tree', function(done) {
     var tree = converter.getTree(this.content);
     expect(tree[0]).to.equal('markdown');
-    converter.convertListToTable(tree);
+    converter.convertListToTable(tree).then(function() {
+      done();
+    });
   });
 
   it('parses tables', function() {
