@@ -1,0 +1,25 @@
+{
+  "name": "awesome-stars",
+  "version": "0.0.1",
+  "description": "Awesome lists, more awesome'd.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kris Kelly",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^2.9.24",
+    "fs-extra": "^0.18.2",
+    "github-markdown-css": "^2.0.8",
+    "lodash": "^3.7.0",
+    "markdown": "^0.5.0",
+    "request": "^2.55.0"
+  },
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "mocha": "^2.2.4",
+    "nock": "^1.6.0",
+    "prettyjson": "^1.1.0"
+  }
+}
