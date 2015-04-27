@@ -1,7 +1,14 @@
 var expect = require('chai').expect;
 var fs = require('fs');
+var proxyquire = require('proxyquire');
+var Promise = require('bluebird');
 process.env['TOKEN'] = 'foobar';
-var converter = require('../lib/converter.js');
+var stubs = {
+  './starcount': function() {
+    return Promise.resolve(123); // Always return 123 for the star count.
+  }
+}
+var converter = proxyquire('../lib/converter.js', stubs);
 var pretty = require('prettyjson');
 var nock = require('nock');
 
