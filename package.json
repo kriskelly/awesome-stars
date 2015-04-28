@@ -11,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "bluebird": "^2.9.24",
+    "bluebird-retry": "^0.4.0",
     "fs-extra": "^0.18.2",
     "github": "^0.2.4",
     "github-markdown-css": "^2.0.8",
