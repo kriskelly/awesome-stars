@@ -7,6 +7,11 @@ describe('urlparser', function() {
       .to.deep.equal({user: 'rschmukler', repo: 'agenda'});
   });
 
+  it('extracts the repo when it has .git extension', function() {
+    expect(urlparser('https://github.com/foobar/baz.git'))
+      .to.deep.equal({user: 'foobar', repo: 'baz'});
+  });
+
   it('ignores non-github URLs', function() {
     expect(urlparser('https://www.phusionpassenger.com/node_weekly')).to.be.undefined;
   });
@@ -18,6 +23,10 @@ describe('urlparser', function() {
   it('does not break when missing URL', function() {
     expect(urlparser(null)).to.be.undefined;
   })
+
+  it('does not break with user-only Github urls', function() {
+    expect(urlparser('https://github.com/foobar/')).to.be.undefined;
+  });
 
   it('ignores hash fragments and other nonsense at the end of the URL', function() {
     expect(urlparser('https://github.com/maxogden/art-of-node/#the-art-of-node'))

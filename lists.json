@@ -1,7 +1,7 @@
 {
   "lists": {
-    "golang": "https://raw.githubusercontent.com/avelino/awesome-go/master/README.md",
     "node": "https://raw.githubusercontent.com/sindresorhus/awesome-nodejs/master/readme.md",
+    "golang": "https://raw.githubusercontent.com/avelino/awesome-go/master/README.md",
     "elixir": "https://raw.githubusercontent.com/h4cc/awesome-elixir/master/README.md"
   }
 }

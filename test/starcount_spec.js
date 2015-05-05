@@ -8,7 +8,12 @@ describe('starcount', function() {
     this.repoUrl = {user: 'mikespook', repo: 'gorbac'};
     this.githubReq = nock('https://api.github.com')
       .get('/repos/mikespook/gorbac?access_token=foobar')
-      .reply(200, {stargazers_count: 82});
+      .reply(200, {
+        stargazers_count: 82,
+        meta: {
+          status: '200 OK'
+        }
+      });
   });
 
   describe('when the repo url is garbage', function() {
