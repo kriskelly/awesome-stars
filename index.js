@@ -7,14 +7,14 @@ var reader = require('./lib/reader'),
 
 Promise.promisifyAll(fs);
 
-reader.readMarkdown().then(lists => {
+reader.readMarkdown().then(function(lists) {
   var htmlMap = _.mapValues(lists, function(markdownStr, listName) {
     var tree = converter.getTree(markdownStr);
-    return converter.convertListToTable(tree).then(function() {
-      return converter.toHTML(tree);
+    return converter.convertListToTable(tree).then(function(newTree) {
+      return converter.toHTML(newTree);
     });
   });
   return Promise.props(htmlMap).then(writer.writeFilesAsync);
-}).then(() => {
+}).then(function() {
   console.log('success');
 });
