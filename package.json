@@ -25,6 +25,8 @@
     "mocha": "^2.2.4",
     "nock": "^1.6.0",
     "prettyjson": "^1.1.0",
-    "proxyquire": "^1.4.0"
+    "proxyquire": "^1.4.0",
+    "sinon": "^1.14.1",
+    "sinon-bluebird": "^1.0.3"
   }
 }
