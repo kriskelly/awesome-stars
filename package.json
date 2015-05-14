@@ -3,8 +3,9 @@
   "version": "0.0.1",
   "description": "Awesome lists, more awesome'd.",
   "main": "index.js",
+  "private": true,
   "scripts": {
-    "start": "node --harmony --harmony_arrow_functions index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kris Kelly",
