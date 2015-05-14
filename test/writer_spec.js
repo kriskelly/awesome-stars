@@ -3,9 +3,9 @@ var writer = require('../lib/writer');
 
 describe('writer', function() {
   it('saves HTML files in templates', function(done) {
-    writer.writeFilesAsync({foo: 'bar bar'}).then(() => {
+    writer.writeFilesAsync({foo: 'bar bar'}).then(function() {
       done();
-    }).catch(e => {
+    }).catch(function(e) {
       console.log(e);
     });
   });

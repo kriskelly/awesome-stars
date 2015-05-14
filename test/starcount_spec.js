@@ -36,7 +36,7 @@ describe('starcount', function() {
     });
   });
 
-  it.only('retrieves the github stargazer count for the repo url', function(done) {
+  it('retrieves the github stargazer count for the repo url', function(done) {
     starcount(this.repoUrl).then(function(count) {
       expect(count).to.equal(82);
       done();
